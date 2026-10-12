@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authorization - ScienceGloon</title><meta name="description" content="ScienceGloon app authorization callback."><meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.png"><link rel="stylesheet" href="../style.css"></head><body><div class="wrap">
+<header><a class="brand" href="../"><img src="../assets/logo-120.png" alt="ScienceGloon logo" width="40" height="40">ScienceGloon</a>
+<nav><a href="../">Home</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav></header>
+
+<h1>Authorization</h1>
+<p id="msg" class="lead">Reading the authorization response&hellip;</p>
+<p><textarea id="code" readonly rows="3" hidden></textarea></p>
+<p><button id="copy" hidden>Copy code</button></p>
+<p>This page only shows the one-time code that TikTok returns after you authorize the ScienceGloon app. It sends nothing
+anywhere. Copy the code into the setup step within a few minutes; it expires and works only once.</p>
+<script>
+const q = new URLSearchParams(location.search), msg = document.getElementById('msg'), box = document.getElementById('code'), btn = document.getElementById('copy');
+if (q.get('error')) { msg.textContent = 'TikTok returned an error: ' + q.get('error') + ' ' + (q.get('error_description') || ''); }
+else if (q.get('code')) { msg.textContent = 'Authorized. State: ' + (q.get('state') || '(none)') + '. Code:'; box.value = q.get('code'); box.hidden = btn.hidden = false;
+  btn.onclick = () => { box.select(); navigator.clipboard ? navigator.clipboard.writeText(box.value) : document.execCommand('copy'); btn.textContent = 'Copied'; }; }
+else { msg.textContent = 'No authorization code in this address.'; }
+</script>
+<footer><a href="../">Home</a><a href="../privacy/">Privacy Policy</a><a href="../terms/">Terms of Service</a><br>
+&copy; 2026 ScienceGloon &middot; Contact: <a href="mailto:daniel@lagowski.es">daniel@lagowski.es</a></footer></div></body></html>

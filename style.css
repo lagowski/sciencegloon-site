@@ -1,0 +1,20 @@
+/* Data on the Map brand: paper, ink, one teal accent (engine/template.html palette). No web fonts, no trackers. */
+:root{--bg:#F4F1EA;--fg:#15171C;--muted:#6E695E;--accent:#0E6E66;--card:#FBFAF6;--line:#DCD6C8}
+@media (prefers-color-scheme:dark){:root{--bg:#15171C;--fg:#F1EDE4;--muted:#A8A295;--accent:#4FB3A9;--card:#1D2026;--line:#2C3038}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:40px 16px 64px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--fg);text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px}
+nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:15px}nav a:first-child{margin-left:0}
+nav a:hover{color:var(--accent)}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.15;margin:0 0 12px}h2{margin-top:36px;font-size:22px}
+.card h2{margin-top:0}
+.lead{font-size:20px;color:var(--muted)}a{color:var(--accent)}code{font-size:.9em;overflow-wrap:anywhere}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:20px 0}
+textarea{width:100%;font-family:ui-monospace,monospace;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px}
+button{font:inherit;padding:6px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer a{color:var(--muted);margin-right:14px}
+.yt img{display:block;height:auto;width:300px;max-width:100%;margin:-18px 0 -12px -26px}
