@@ -18,7 +18,7 @@ check "style.css"         "body"                               || fail=1
 code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/no-such-page-$RANDOM/")
 [[ "$code" == 404 ]] && echo "OK   404 on a made-up path" || { echo "FAIL made-up path gave $code"; fail=1; }
 here=$(dirname "$0")
-for f in assets/app-icon-1024.png assets/logo-120.png favicon.png; do
+for f in assets/app-icon-1024.png assets/logo-120.png favicon.png tiktokQmNRhqelgtuHDAcOZez9T4hX9my44Ufx.txt; do
   live=$(curl -s "$BASE/$f" | sha256sum | cut -d' ' -f1); repo=$(sha256sum "$here/$f" | cut -d' ' -f1)
   [[ "$live" == "$repo" ]] && echo "OK   $f byte-identical ($live)" || { echo "FAIL $f live $live != repo $repo"; fail=1; }
 done
