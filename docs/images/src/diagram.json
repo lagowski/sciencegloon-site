@@ -77,7 +77,7 @@
   {
    "from": "b",
    "to": "h",
-   "label": "python3 build.py"
+   "label": "build"
   },
   {
    "from": "h",
@@ -105,7 +105,7 @@
    "from": "c",
    "to": "a",
    "dashed": true,
-   "label": "code, by hand"
+   "label": "code"
   }
  ],
  "note": "Nothing on these pages calls a third party."
