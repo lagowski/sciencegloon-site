@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- ScienceGloon site: how it works (v3). Drawn as one more page of the site: its header, h1, .lead, .card and footer
+     (style.css tokens, light scheme on an opaque paper frame so it reads on GitHub dark and light). 1600x900 @2x. -->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&family=Roboto+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+:root{--bg:#F4F1EA;--fg:#15171C;--muted:#6E695E;--accent:#0E6E66;--card:#FBFAF6;--line:#DCD6C8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:900px;overflow:hidden;background:var(--bg);color:var(--fg);font-family:Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono,code{font-family:"Roboto Mono",monospace}
+header{position:absolute;left:56px;right:56px;top:36px;display:flex;align-items:center;gap:12px;font-weight:800;font-size:26px}
+header img{width:46px;height:46px;border-radius:11px}
+header nav{margin-left:auto;font-weight:400;font-size:17px;color:var(--muted);display:flex;gap:22px}
+header nav b{color:var(--accent);font-weight:500}
+h1{position:absolute;left:56px;top:112px;font-size:46px;font-weight:800;letter-spacing:-.015em}
+.lead{position:absolute;left:56px;top:176px;width:1150px;font-size:21px;line-height:1.5;color:var(--muted)}
+.card{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.card h2{font-size:21px;font-weight:700;display:flex;align-items:center;gap:10px}
+.card p{font-size:16px;line-height:1.5;color:var(--muted);margin-top:6px}
+.card ul{list-style:none;margin-top:10px;font-size:16px;line-height:1.75}
+.card li{display:flex;justify-content:space-between;border-top:1px solid var(--line)}
+.card li span{color:var(--muted)}
+.path{font:500 15px "Roboto Mono",monospace;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:3px 9px;border-radius:7px}
+.pg h2{font-size:19px}.pg p{font-size:15px;margin-top:5px}
+.btn{font:500 14px Roboto;padding:4px 12px;border-radius:8px;background:var(--accent);color:#fff}
+.lab{position:absolute;font:500 14.5px Roboto;background:var(--bg);color:var(--accent);padding:2px 8px;white-space:nowrap;transform:translate(-50%,-50%)}
+svg{position:absolute;inset:0}
+footer{position:absolute;left:56px;right:56px;top:806px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:17px;display:flex;gap:30px}
+footer b{color:var(--fg)}
+</style></head><body>
+<header><img src="../../../assets/logo-120.png">ScienceGloon<nav><span>Home</span><span>Privacy</span><span>Terms</span><b>How it works</b></nav></header>
+<h1>One script writes four plain pages.</h1>
+<p class="lead">The publisher app's listings on TikTok, Meta and Google each need a public home, a privacy policy and terms. <code style="font-size:.9em">build.py</code> writes them, GitHub Pages serves them as files, and nothing on them calls a third party.</p>
+
+<svg width="1600" height="900" fill="none" stroke="#9C9686" stroke-width="1.6">
+ <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9C9686" stroke="none"/></marker></defs>
+ <path d="M366 420H436" marker-end="url(#a)"/><path d="M436 330V745" stroke-width="3" stroke="#0E6E66" opacity=".35"/>
+ <path d="M786 400H876" marker-end="url(#a)"/>
+ <path d="M1176 400H1266" marker-end="url(#a)"/>
+ <path d="M1026 588V478" marker-end="url(#a)"/>
+ <path d="M1544 372H1570V722H800Q788 722 788 706" stroke-dasharray="5 5" marker-end="url(#a)"/>
+</svg>
+<span class="lab" style="left:401px;top:420px">writes</span>
+<span class="lab" style="left:831px;top:400px">git push</span>
+<span class="lab" style="left:1221px;top:400px">linked</span>
+<span class="lab" style="left:1026px;top:533px">curl</span>
+<span class="lab" style="left:1180px;top:722px">TikTok redirects with ?code=…</span>
+
+<div class="card" style="left:56px;top:300px;width:310px;height:250px"><h2><code>build.py</code></h2><p>Python standard library, no dependencies.</p>
+ <ul><li>page() <span>&times; 4</span></li><li>header + footer <span>shared</span></li><li>effective date <span>one place</span></li></ul></div>
+<div class="card" style="left:56px;top:570px;width:310px;height:176px"><h2><code>style.css</code> + assets</h2><p>Paper, ink, one teal. No web fonts. Logo, favicon and the 1024 px app icon.</p></div>
+
+<div class="card pg" style="left:456px;top:300px;width:330px;height:98px"><h2><span class="path">/</span> Home</h2><p>What the channel and the app do.</p></div>
+<div class="card pg" style="left:456px;top:416px;width:330px;height:98px"><h2><span class="path">/privacy/</span> Privacy Policy</h2><p>What the app reads, keeps, deletes.</p></div>
+<div class="card pg" style="left:456px;top:532px;width:330px;height:98px"><h2><span class="path">/terms/</span> Terms of Service</h2><p>The service, use, warranty, law.</p></div>
+<div class="card pg" style="left:456px;top:648px;width:330px;height:98px"><h2><span class="path">/tiktok-callback/</span></h2><p>Shows the one-time code. <span class="btn">Copy code</span></p></div>
+
+<div class="card" style="left:886px;top:300px;width:290px;height:172px"><h2>GitHub Pages</h2><p>Serves the committed files as they are. No server code, no cookies.</p><ul><li>.nojekyll <span>no rebuild</span></li></ul></div>
+<div class="card" style="left:886px;top:588px;width:290px;height:104px"><h2><code>check_live.sh</code></h2><p>Each page 200 with its own text; a control must fail.</p></div>
+
+<div class="card" style="left:1276px;top:300px;width:268px;height:144px"><h2>TikTok listing</h2><ul><li>privacy, terms <span>links</span></li><li>verification file <span>.txt</span></li><li>redirect URI <span>callback</span></li></ul></div>
+<div class="card" style="left:1276px;top:460px;width:268px;height:86px"><h2>Meta listing</h2><ul><li>privacy policy <span>link</span></li></ul></div>
+<div class="card" style="left:1276px;top:562px;width:268px;height:86px"><h2>Google listing</h2><ul><li>YouTube API section <span>#youtube</span></li></ul></div>
+
+<footer><span><b>0</b> cookies</span><span><b>0</b> analytics</span><span><b>0</b> third-party requests</span><span style="margin-left:auto">&copy; ScienceGloon &middot; python3 build.py</span></footer>
+</body></html>
