@@ -1,0 +1,112 @@
+{
+ "family": "sciencegloon",
+ "kicker": "How it works",
+ "title": "One script, *four* pages",
+ "subtitle": "One Python file writes every page with a shared header and footer. GitHub Pages serves them; the app stores of TikTok, Meta and Google link to them when they review ScienceGloon's publisher app.",
+ "width": 1600,
+ "height": 900,
+ "cols": 4,
+ "rows": 2,
+ "nodes": [
+  {
+   "id": "b",
+   "col": 0,
+   "row": 0,
+   "tag": "SRC",
+   "t": "build.py",
+   "s": "page text, contact, date",
+   "n": "01"
+  },
+  {
+   "id": "h",
+   "col": 1,
+   "row": 0,
+   "tag": "OUT",
+   "t": "4 HTML pages",
+   "s": "home, privacy, terms, callback (EN + ES)",
+   "n": "02"
+  },
+  {
+   "id": "g",
+   "col": 2,
+   "row": 0,
+   "tag": "HOST",
+   "t": "GitHub Pages",
+   "s": "no cookies, no trackers",
+   "n": "03"
+  },
+  {
+   "id": "s",
+   "col": 3,
+   "row": 0,
+   "tag": "EXT",
+   "t": "App reviews",
+   "s": "TikTok, Meta, Google",
+   "n": "04",
+   "hi": true
+  },
+  {
+   "id": "v",
+   "col": 3,
+   "row": 1,
+   "tag": "FILE",
+   "t": "Verification file",
+   "s": "TikTok URL-prefix check",
+   "n": "05"
+  },
+  {
+   "id": "c",
+   "col": 2,
+   "row": 1,
+   "tag": "PAGE",
+   "t": "/tiktok-callback",
+   "s": "shows the one-time code",
+   "n": "06"
+  },
+  {
+   "id": "a",
+   "col": 1,
+   "row": 1,
+   "tag": "APP",
+   "t": "ScienceGloon Publisher",
+   "s": "internal upload tool",
+   "n": "07"
+  }
+ ],
+ "edges": [
+  {
+   "from": "b",
+   "to": "h",
+   "label": "python3 build.py"
+  },
+  {
+   "from": "h",
+   "to": "g",
+   "label": "git push"
+  },
+  {
+   "from": "g",
+   "to": "s",
+   "label": "linked",
+   "hi": true
+  },
+  {
+   "from": "s",
+   "to": "v",
+   "dashed": true,
+   "label": "checks"
+  },
+  {
+   "from": "s",
+   "to": "c",
+   "dashed": true
+  },
+  {
+   "from": "c",
+   "to": "a",
+   "dashed": true,
+   "label": "code, by hand"
+  }
+ ],
+ "note": "Nothing on these pages calls a third party."
+}

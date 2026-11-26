@@ -1,0 +1,82 @@
+{
+ "family": "sciencegloon",
+ "kicker": "sciencegloon  /  website",
+ "name": "Science*Gloon*",
+ "tagline": "Science explained in a minute. The public home and legal pages of the channel.",
+ "install": "python3 build.py",
+ "stats": [
+  {
+   "value": "4",
+   "label": "pages"
+  },
+  {
+   "value": "4",
+   "label": "platforms linked"
+  },
+  {
+   "value": "0",
+   "label": "cookies or trackers",
+   "hi": true
+  },
+  {
+   "value": "0",
+   "label": "dependencies"
+  }
+ ],
+ "visual": {
+  "type": "layers",
+  "layers": [
+   {
+    "title": "Read by",
+    "nodes": [
+     {
+      "t": "TikTok"
+     },
+     {
+      "t": "Meta"
+     },
+     {
+      "t": "Google",
+      "s": "YouTube API"
+     }
+    ]
+   },
+   {
+    "title": "Serve",
+    "nodes": [
+     {
+      "t": "GitHub Pages",
+      "s": "static",
+      "hi": true
+     },
+     {
+      "t": "/privacy"
+     },
+     {
+      "t": "/terms"
+     }
+    ]
+   },
+   {
+    "title": "Build",
+    "nodes": [
+     {
+      "t": "build.py",
+      "s": "stdlib only"
+     },
+     {
+      "t": "style.css"
+     },
+     {
+      "t": "brand kit"
+     }
+    ]
+   }
+  ]
+ },
+ "theme": "light",
+ "light_accent": "#0b7a7a",
+ "overrides": {
+  "word-size": "118px"
+ }
+}
